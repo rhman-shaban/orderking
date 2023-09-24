@@ -31,7 +31,7 @@
         the choice between single-database and multi-database multi-tenancy may not be critically significant for our project
 
 
-## Dfor run project:
+## to run project:
 
 - git clone repository
 - composer install
