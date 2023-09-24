@@ -42,6 +42,12 @@
 - php artisan serve
 
 
+## cridential:
+- for admin login:(email:admin@orderking.con || password:password)
+- for merchant login:(email:merchant@orderking.con || password:password)
+- for user login:(email:user@orderking.con || password:password)
+
+
 ## Development Stack
 
 ### Backend
