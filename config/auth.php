@@ -40,7 +40,25 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        'user' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+        'api' => [
+            'driver' => 'token',
+            'provider' => 'users',
+        ],
+        'admin' => [
+            'driver' => 'session', // You can use 'session' or 'token' based on your authentication needs
+            'provider' => 'admin', // Make sure the provider name matches your 'providers' configuration
+        ],
+        'merchant' => [
+            'driver' => 'session', // You can use 'session' or 'token' based on your authentication needs
+            'provider' => 'merchant', // Make sure the provider name matches your 'providers' configuration
+        ],
     ],
+
 
     /*
     |--------------------------------------------------------------------------
@@ -65,19 +83,15 @@ return [
             'model' => App\Models\User::class,
         ],
         'admin' => [
-            'driver' => 'session',
-            'provider' => 'admins', // The admin model provider
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class, // Specify the Admin model
         ],
         'merchant' => [
-            'driver' => 'session',
-            'provider' => 'merchants', // The merchant model provider
+            'driver' => 'eloquent',
+            'model' => App\Models\Merchant::class, // Specify the Merchant model
         ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
     ],
+
 
     /*
     |--------------------------------------------------------------------------
@@ -104,14 +118,6 @@ return [
             'table' => 'password_reset_tokens',
             'expire' => 60,
             'throttle' => 60,
-        ],
-        'admins' => [
-            'driver' => 'eloquent',
-            'model' => App\Admin::class, // Specify the Admin model
-        ],
-        'merchants' => [
-            'driver' => 'eloquent',
-            'model' => App\Merchant::class, // Specify the Merchant model
         ],
     ],
 

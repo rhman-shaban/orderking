@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateMerchantsTable extends Migration {
 
@@ -10,11 +11,11 @@ class CreateMerchantsTable extends Migration {
 		Schema::create('merchants', function(Blueprint $table) {
 			$table->bigIncrements('id');
 			$table->timestamps();
-			$table->string('owner_name');
+			$table->string('name');
 			$table->string('shop_name');
 			$table->string('phone');
 			$table->string('email')->unique();
-			$table->text('adress');
+			$table->text('address')->nullable();
 			$table->string('password');
 		});
 	}

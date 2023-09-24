@@ -1,16 +1,17 @@
 <?php
 
 namespace App\Models;
-
+use DateTimeInterface;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Model
+class User extends Authenticatable
 {
 
     protected $table = 'users';
     public $timestamps = true;
-    protected $fillable = array('full_name', 'phone', 'email', 'adress', 'password');
-    protected $visible = array('full_name', 'phone', 'email', 'adress');
+    protected $fillable = array('name', 'phone', 'email', 'adress', 'password');
+    protected $visible = array('name', 'phone', 'email', 'adress','created_at');
     protected $hidden = array('password');
 
 
@@ -29,4 +30,15 @@ class User extends Model
 		$this->hidden = $hidden;
 		return $this;
 	}
+
+    public function toResource()
+    {
+        return new \App\Http\Resources\UserResource($this);
+    }
+
+    protected function serializeDate(DateTimeInterface $date)
+    {
+        return $date->format('Y-m-d');
+    }
+
 }
