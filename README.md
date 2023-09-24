@@ -22,7 +22,7 @@
         It's a key architectural concept in SaaS, allowing shared resources to be used efficiently while maintaining data privacy and security for each tenant.
 
 
-## Configurations
+## Which multi tenancy approach would you use for our project? (single or multi-database)
 
         - For our project, implementing a multi-database approach would likely be more suitable, especially if you have multiple merchants or tenants. In this approach, 
         each tenant (merchant) has its own separate database,
