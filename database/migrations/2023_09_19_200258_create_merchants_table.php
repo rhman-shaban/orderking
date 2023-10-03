@@ -13,6 +13,7 @@ class CreateMerchantsTable extends Migration {
 			$table->timestamps();
 			$table->string('name');
 			$table->string('shop_name');
+			$table->string('subdomain');
 			$table->string('phone');
 			$table->string('email')->unique();
 			$table->text('address')->nullable();

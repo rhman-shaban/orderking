@@ -14,14 +14,13 @@ class MerchantSeeder extends Seeder
 
     public function run()
     {
-        \Illuminate\Database\Eloquent\Factories\Factory::factoryForModel(Merchant::class)->count(10)->create();
-
-        Merchant::create([
-            'name' =>"Merchant OrderKing",
-            'phone' =>"+1100000000",
-            'email' =>"merchant@orderking.con",
-            'shop_name' =>"OrderKing Shop",
-            'password' =>"$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
+        $sequence = 0;
+        \Illuminate\Database\Eloquent\Factories\Factory::factoryForModel(Merchant::class)->count(6)->create([
+            'subdomain' => function () use (&$sequence) {
+                $sequence++;
+                return 'app' . $sequence;
+            },
         ]);
+
     }
 }

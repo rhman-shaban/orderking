@@ -2,7 +2,7 @@
 
 
 ## to run project:
-
+- make virual host for subdomains by name :app1,app2,app3,app4,app5,app6
 - git clone repository
 - composer install
 - cp .env.example .env
@@ -10,12 +10,6 @@
 - php artisan migrate --seed
 - npm install && npm run dev
 - php artisan serve
-
-
-## cridential:
-- for admin login:(email:admin@orderking.con || password:password)
-- for merchant login:(email:merchant@orderking.con || password:password)
-- for user login:(email:user@orderking.con || password:password)
 
 
 ## Development Stack

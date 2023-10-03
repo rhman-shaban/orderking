@@ -50,6 +50,7 @@ class Kernel extends HttpKernel
     protected $routeMiddleware = [
         // ...
         'custom.auth' => \App\Http\Middleware\CustomAuthenticate::class,
+        'subdomain' => \App\Http\Middleware\SubdomainMiddleware::class,
     ];
 
 

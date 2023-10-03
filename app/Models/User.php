@@ -11,7 +11,7 @@ class User extends Authenticatable
     protected $table = 'users';
     public $timestamps = true;
     protected $fillable = array('name', 'phone', 'email', 'adress', 'password');
-    protected $visible = array('name', 'phone', 'email', 'adress','created_at');
+    protected $visible = array('name', 'id','phone', 'email', 'adress','created_at');
     protected $hidden = array('password');
 
 
@@ -39,6 +39,10 @@ class User extends Authenticatable
     protected function serializeDate(DateTimeInterface $date)
     {
         return $date->format('Y-m-d');
+    }
+    public function scopeForTenant($query)
+    {
+        return $query->where('merchant_id', config('tenant')->id);
     }
 
 }

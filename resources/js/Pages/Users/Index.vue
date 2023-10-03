@@ -3,7 +3,7 @@
 
     <AuthenticatedLayout>
         <template #header>
-            Users
+            Users for merchant: {{ tenanet }}
         </template>
 
         <div class="mb-4 inline-flex w-full overflow-hidden rounded-lg bg-white shadow-md">
@@ -11,7 +11,7 @@
 
             <div class="-mx-3 px-4 py-2">
                 <div class="mx-3">
-                    <span class="font-semibold text-blue-500">welcome  {{ $page.props.auth.user.name }}</span>
+                    <span class="font-semibold text-blue-500">welcome  </span>
                 </div>
             </div>
         </div>

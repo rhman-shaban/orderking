@@ -12,14 +12,16 @@ class Merchant extends Authenticatable
     protected $table = 'merchants';
     public $timestamps = true;
     protected $guarded = array('password');
-    protected $fillable = array('name', 'shop_name', 'phone', 'email', 'adress');
-    protected $visible = array('name', 'shop_name', 'phone', 'email', 'adress','created_at');
+    protected $fillable = array('name','subdomain', 'shop_name', 'phone', 'email', 'adress');
+    protected $visible = array('name','id', 'subdomain','shop_name', 'phone', 'email', 'adress','created_at');
     protected $hidden = array('password');
 
     public function users()
     {
         return $this->hasMany('User');
     }
+
+    
 
     protected function serializeDate(DateTimeInterface $date)
     {

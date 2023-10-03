@@ -22,9 +22,10 @@ class MerchantFactory extends Factory
      */
     public function definition()
     {
+
         return [
             'name' =>  fake()->name(),
-            'shop_name' => fake()->company(),
+            'shop_name' => $this->faker->company(),
             'phone' => fake()->phoneNumber(),
             'email' =>fake()->unique()->safeEmail(),
             'address' => fake()->address(),
