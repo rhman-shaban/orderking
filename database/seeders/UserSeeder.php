@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
             'name' => "User OrderKing",
             'phone' => "+1100000000",
             'email' => "user@orderking.con",
-            'password' => bcrypt('your_password'), // Replace 'your_password' with the desired password
+            'password' => bcrypt('password'), // Replace 'your_password' with the desired password
             'merchant_id' => 1, // Provide an integer value for 'merchant_id'
         ]);
     }
